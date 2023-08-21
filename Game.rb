@@ -1,13 +1,10 @@
-import './Player.rb'
-import './Question.rb'
-Class Game
-include Player
-include Question
-  attr_accessor :player1, :player2, :current_player, :game_over :winner :lives
-  def initialize(lives)
-    @lives = lives
-    @player1 = Player.new('Numero Uno', lives)
-    @player2 = Player.new('Numero Dos', lives)
+require './Player.rb'
+require './Question.rb'
+class Game
+  attr_accessor :player1, :player2, :current_player, :game_over, :winner, :lives
+  def initialize
+    @player1 = Player.new('Numero Uno', 3)
+    @player2 = Player.new('Numero Dos', 3)
     @current_player = @player1
     @game_over = false
   end
@@ -33,12 +30,17 @@ include Question
         end
         puts "----GAME OVER----"
         @game_over = true
-        puts "#{@winner} wins with a score of #{@winner.lives_remaining}/#{lives}"
+        puts "#{@winner} wins with a score of #{@winner.lives_remaining}/3"
+      else
+        if (@current_player == @player1)
+          @current_player = @player2
+        else
+          @current_player = @player1
+        end
       end
     end
   end
 end
-
 
 
 
