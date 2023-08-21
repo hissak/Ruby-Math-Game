@@ -1,4 +1,4 @@
-Class Player {
+Class Player 
   attr_accessor :name, :lives
   def initialize(name, lives)
     @name = name
@@ -13,4 +13,3 @@ Class Player {
   def to_s
     "#{name}: #{lives}/3"
   end
-}
