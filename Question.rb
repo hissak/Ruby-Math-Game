@@ -8,7 +8,7 @@ Class Question
   def generate_question
     "What does #{num1} plus #{num2} equal?"
   end
-  def check_answer(player_answer)
+  def check_answer?(player_answer)
     player_answer == answer
   end
 end

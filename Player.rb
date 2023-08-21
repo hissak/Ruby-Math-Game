@@ -13,3 +13,7 @@ Class Player
   def to_s
     "#{name}: #{lives}/3"
   end
+  def lives_remaining
+    "#{lives}"
+  end
+end
