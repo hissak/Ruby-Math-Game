@@ -9,7 +9,7 @@ class Question
     puts "What does #{num1} plus #{num2} equal?"
   end
   def check_answer?(player_answer)
-    player_answer == answer
+    player_answer.to_i == answer
   end
 end
 

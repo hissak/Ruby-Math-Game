@@ -9,11 +9,12 @@ class Game
     @game_over = false
   end
   def start_game
+    puts '-----NEW GAME-----'
     while !game_over
       puts '-----NEW QUESTION-----'
       question = Question.new
-      puts '-----NEW TURN-----'
       question.generate_question
+      puts "Player #{@current_player}:"
       player_answer = gets.chomp
       if (question.check_answer?(player_answer))
         puts "YES! You are correct, #{@current_player}"
@@ -21,7 +22,7 @@ class Game
         puts "Seriously? Go back to school, #{@current_player}"
         @current_player.lose_life
       end
-      puts @player1.to_s + " " + @player2.to_s
+      puts @player1.player + ", " + @player2.player
       if (@current_player.is_dead?)
         if (@current_player == @player1)
           @winner = @player2

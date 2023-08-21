@@ -5,12 +5,15 @@ class Player
     @lives = lives
   end
   def lose_life
-    lives - 1
+    @lives = @lives - 1
   end
   def is_dead?
     lives == 0
   end
   def to_s
+    "#{name}"
+  end
+  def player
     "#{name}: #{lives}/3"
   end
   def lives_remaining
